@@ -55,7 +55,7 @@
                 </div>
                 <div class="flex items-center">
                     <a href="{{ route('pdf', [$usuario->id]) }}">
-                        <button type="button" class="bg-blue-500 text-white p-2 rounded">Cargar PDF</button>
+                        <button type="button" class="bg-blue-500 text-white p-2 rounded">Dowland PDF</button>
                     </a>
                 </div>
             </div>

@@ -25,10 +25,10 @@ class ListarController extends Controller
     public function actualizarUsuario(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'cedula' => 'required|numeric',
-            'numero_telefono' => 'required|string|max:15',
-            'direccion' => 'required|string|max:255',
+            'name' => 'required|string|max:40',
+            'cedula' => 'required|min:10|max:10',
+            'numero_telefono' => 'required|string|max:10',
+            'direccion' => 'required|string|max:20',
         ]);
 
         $usuario = User::find($id);
@@ -44,16 +44,19 @@ class ListarController extends Controller
     }
     public function eliminar($id)
     {
+        //modal usuario//
         $usuario = User::find($id);
         $usuario->delete();
         return redirect()->route('listar');
     }
 
-    // Generar PDF
+
+
+
     public function pdf($id)
     {
         $userFind = User::find($id);
-        // die($userFind);
+
         $pdf = PDF::LoadView('auth.pdf', compact("userFind"));
 
         return $pdf->stream();

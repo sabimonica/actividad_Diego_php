@@ -13,6 +13,7 @@
     <h1 class="text-3xl font-black">
         MonicaYulitssa
     </h1>
+
 {{--Vamos a verificar si un usuario esta autenticado--}}
 
     @guest()

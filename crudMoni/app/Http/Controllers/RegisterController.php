@@ -19,7 +19,7 @@ class RegisterController extends Controller
 
         $this->validate($request, [
             'name'=>'required | max:30',
-            'cedula'=>'required | min:10|int',
+            'cedula'=>'required|min:10|int',
             'numero_telefono' =>'required | min:9',
             'direccion' =>'required| max:13'
         ]);
@@ -32,18 +32,11 @@ class RegisterController extends Controller
             'direccion' => $request->direccion
         ]);
 
-        //Auutenticar
-
-        /*auth()->attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ]);*/
-
         //Redireccionar
-        return redirect()->route('register');
+        return redirect('listar');
 
 
     }
-    
+
 
 }
